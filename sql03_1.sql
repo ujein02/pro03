@@ -22,3 +22,16 @@ INSERT INTO notice(title,content) VALUES("테스트1","테스트글입니다1");
 
 COMMIT;
 
+CREATE TABLE user(
+	id VARCHAR(13) PRIMARY KEY, 
+	pw VARCHAR(200) NOT null,
+	name VARCHAR(50) NOT null,
+	address VARCHAR(500),
+	tel VARCHAR(14),
+	regDate DATETIME DEFAULT NOW(),
+	email VARCHAR(50)
+);
+
+DESC USER;
+
+drop table user;

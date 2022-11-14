@@ -19,6 +19,8 @@ public class Maria {
 	final static String NOTICE_VISITED_UPDATE = "update notice set visited = visited + 1 where no=?";
 	final static String NOTICE_SELECT_ONE = "select * from notice where no=?";
 	final static String NOTICE_INSERT = "insert into notice(title, content) values (?, ?)";
+	final static String NOTICE_DELEDTE = "delete from notice where no=?";
+	final static String NOTICE_UPDATE = "update notice set title=?, content=? where no=?";
 	
 	final static String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, address) values (?,?,?,?,?,?,?)";
 	final static String USER_LOGIN = "select * form user where id=? and pw=?";

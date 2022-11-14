@@ -11,47 +11,44 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>공지사항 목록</title>
+    <title>공지사항 수정하기</title>
     <jsp:include page="/head.jsp" />
 <style>
-.buttons{float:right;}
-</style>      
+.buttons {margin-top:10px; float:right;}
+</style>    
   </head>
   <body>
   <jsp:include page="/header.jsp" />
   <section class="section">
     <div class="container">
-      <h1 class="title">공지사항 목록</h1>
+      <h1 class="title">공지사항 수정하기</h1>
+      <form action="ModifyNoticeProCtrl.do" method="post">
 		<table class="table">
-		  <thead>
-		    <tr>
-		      <th><abbr title="No">No</abbr></th>
-		      <th><abbr title="Title">Title</abbr></th>
-		      <th><abbr title="Result">RegDate</abbr></th>
-		    </tr>
-		  </thead>
 		   <tbody>
-		   <c:forEach items="${list }" var="dto" varStatus="status">
 		    <tr>
-		      <td>${status.count }</td>
-		      <td><a href="${path1 }/GetNoticeCtrl.do?no=${dto.no }">${dto.title }</a></td>
+		      <th>번호</th>
 		      <td>
-		      	<fmt:parseDate value="${dto.regDate }" var="regdate" pattern="yyyy-MM-dd HH:mm:ss" />
-		      	<fmt:formatDate value="${regdate }" pattern="yyyy-MM-dd" />
+		      	<input type="text" name="no" id="no" value="${dto.no }" readonly />
+		      </td>
 		    </tr>
-		    </c:forEach>
-			<c:if test="${empty list }">
 		    <tr>
-		    	<td colspan="3">해당 데이터 목록이 없습니다.</td>
+		      <th>제목</th>
+		      <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" value="${dto.title }" required /></td>
 		    </tr>
-		    </c:if>
+		    <tr>
+		      <th>내용</th>
+		      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required>${dto.content }</textarea></td>
+		    </tr>
 		  </tbody>
 		</table>
 		<div class="buttons">
-		  <a href="${path1 }/notice/addNotice.jsp" class="button is-success">글 등록</a>
+		  <button type="submit" class="button is-success">글 수정</button>
+		  <button type="reset" class="button is-info">취소</button>
+		  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-success">목록</a>
 		</div>
+	  </form>
     </div>
   </section>
-  <jsp:include page="/footer.jsp"></jsp:include>
+  <jsp:include page="/footer.jsp"/>
   </body>
 </html>
