@@ -20,28 +20,44 @@
   </head>
 <body>
 <jsp:include page="/header.jsp" />
-<div class="content container" style="margin-top:100px;">
+  <section class="section">
+    <div class="container">
 	<h2 class="title">로그인</h2>
-	<form name="frm1" action="UserLoginCtrl.do" method="post" id="" class="frm1">
+	<form name="frm1" id="frm1" action="${path1 }/UserLoginCtrl.do" method="post" onsubmit="return joinCheck(this)">
 		<table class="table">
 			<tbody>
 				<tr>
 					<th>아이디</th>
-					<td><input type="text" id= "id" name="cusId" placeholder="아이디 입력" class="input is-info" autofocus required/></td>
+					<td>
+						<div class="form-row">
+							<input type="text" name="id" id="id" placeholder="아이디 입력" class="input" autofocus required />
+						</div>
+						<div>
+							<c:if test="${empty msg }">
+								<p></p>
+							</c:if>
+							<c:if test="${not empty msg }">
+								<p>${msg }</p>
+							</c:if>
+						</div>
+					</td>
 				</tr>
 				<tr>
 					<th>비밀번호</th>
-					<td><input type="password" id= "cusPw" name="cusPw" placeholder="비밀번호 입력" class="input is-info" required/></td>
+					<td><input type="password" name="pw" id="pw" placeholder="비밀번호 입력" class="input" required /></td>
 				</tr>
 			</tbody>
 		</table>
-		<div class="buttons">
-			<input type="submit" name="submit-btn" class="button is-success" value="로그인">
-			<input type="reset" name="reset-btn" class="button is-success" value="취소">
+		<div class="btn-group">
+			<input type="submit" name="submit-btn" class="button button-info" value="로그인">
+			<input type="reset" name="reset-btn" class="button button-info" value="취소">
+			<a href="<%=request.getContextPath() %>/user/agree.jsp" class="button button-danger">회원가입</a>
 		</div>
-	</form>
-	
+	</form>	
+	<script>
+	</script>
 </div>
-<jsp:include page="/footer.jsp"></jsp:include>
+</section>
+<%@ include file="../footer.jsp" %>
 </body>
 </html>

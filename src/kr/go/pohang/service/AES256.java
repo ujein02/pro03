@@ -1,4 +1,4 @@
-package kr.go.pohang.util;
+package kr.go.pohang.service;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;

@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 글 등록</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<style>
+.buttons{float:right;}
+</style>    
   </head>
   <body>
   <jsp:include page="../header.jsp" />
@@ -28,7 +31,7 @@
 			    </tr>
 			    <tr>
 			      <th><label for="content">내용</label></th>
-			      <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
+			      <td><textarea rows="8" cols="150" name="content" id="content" class="textarea" required></textarea></td>
 			    </tr>
 			  </tbody>
 			</table>
