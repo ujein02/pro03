@@ -99,7 +99,7 @@
 							</tr>
 							<tr>
 								<th>방문 횟수</th>
-								<td>${dto.visted }</td>
+								<td>${dto.visited }</td>
 							</tr>
 							<tr>
 								<th>주소</th>

@@ -51,3 +51,6 @@ COMMIT;
 select * from user where id="admin";
 
 delete from user where id="admin";
+
+alter table user rename column visted to visited;
+alter table user rename column addr to address;

@@ -14,6 +14,7 @@
     <title>공지사항 상세보기</title>
     <jsp:include page="/head.jsp" />
 <style>
+.table{border:3px solid #eee;}
 .buttons{float:right;}
 </style>    
   </head>
@@ -49,9 +50,9 @@
 		  </tbody>
 		</table>
 		<div class="buttons">
-		  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-success">목록</a>
+		  <a href="${path1 }/GetNoticeListCtrl.do" class="button is-link">목록</a>
 		  <a href="${path1 }/DelNoticeCtrl.do?no=${dto.no }" class="button is-danger">글 삭제</a>
-		  <a href="${path1 }/ModifyNoticeCtrl.do?no=${dto.no }" class="button is-success">글 수정</a>
+		  <a href="${path1 }/ModifyNoticeCtrl.do?no=${dto.no }" class="button is-link">글 수정</a>
 		</div>
     </div>
   </section>

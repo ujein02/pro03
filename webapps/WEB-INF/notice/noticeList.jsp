@@ -14,6 +14,7 @@
     <title>공지사항 목록</title>
     <jsp:include page="/head.jsp" />
 <style>
+
 .buttons{float:right;}
 </style>      
   </head>
@@ -48,7 +49,7 @@
 		  </tbody>
 		</table>
 		<div class="buttons">
-		  <a href="${path1 }/notice/addNotice.jsp" class="button is-success">글 등록</a>
+		  <a href="${path1 }/notice/addNotice.jsp" class="button is-link">글 등록</a>
 		</div>
     </div>
   </section>

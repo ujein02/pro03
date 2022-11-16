@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <style>
 .table { min-width:960px; }
-#logo { display:block; width:92px; height:45px; background-image:url("${path0 }/data/logo.png");
-background-size:100% auto; background-repeat:no-repeat; }
+#logo { display:block; width:92px; height:45px; background-image:url("${path0 }/data/.png");
+background-size:100% auto; background-repeat:no-repeat; padding-top:10px; }
 #nav { border-bottom:3px solid #ddd; }
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>

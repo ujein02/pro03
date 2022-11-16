@@ -106,7 +106,7 @@ public class NoticeDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//글 추가
+			//글 삭제
 			pstmt = con.prepareStatement(Maria.NOTICE_DELEDTE);
 			pstmt.setInt(1, no);
 			cnt = pstmt.executeUpdate();
@@ -128,7 +128,7 @@ public class NoticeDAO {
 		int cnt = 0;
 		try {
 			con = Maria.getConnection();
-			//글 추가
+			//글 수정
 			pstmt = con.prepareStatement(Maria.NOTICE_UPDATE);
 			pstmt.setString(1, dto.getTitle());
 			pstmt.setString(2, dto.getContent());

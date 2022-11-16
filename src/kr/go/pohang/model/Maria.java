@@ -1,7 +1,5 @@
 package kr.go.pohang.model;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,12 +20,16 @@ public class Maria {
 	final static String NOTICE_DELEDTE = "delete from notice where no=?";
 	final static String NOTICE_UPDATE = "update notice set title=?, content=? where no=?";
 	
-	final static String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, addr) values (?,?,?,?,?,?,?)";
-	final static String USER_LOGIN = "select * form user where id=? and pw=?";
+	final static String USER_JOIN = "insert into user(id, pw, name, birth, email, tel, address) values (?,?,?,?,?,?,?)";
+	final static String USER_LOGIN = "select * from user where id=? and pw=?";
 	final static String USER_ID_CHECK = "select * from user where id=?";
 	final static String USER_ALL = "select * from user";
-	final static String USER_UPDATE = "update user set pw=?, name=?, birth=?, email=?, tel=?, addr=? where id=?";
-	final static String VISIT_UPDATE = "update user set visted=visted+1 where id=?";
+	final static String USER_UPDATE = "update user set pw=?, name=?, birth=?, email=?, tel=?, address=? where id=?";
+	final static String VISIT_UPDATE = "update user set visited=visited+1 where id=?";
+	
+	public final static String TEST_SELECT_ONE = "select * from test where name=?";
+	public final static String TEST_SELECT_ALL = "select * from test ";
+	
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName(DRIVER);

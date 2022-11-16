@@ -9,32 +9,31 @@ import java.util.ArrayList;
 import kr.go.pohang.dto.UserDTO;
 import kr.go.pohang.service.AES256;
 
-
-
 public class UserDAO {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	String key = "%02x";
-	public int idCheckPro(String id){	//중복 아이디 체크 / 회원가입시 가입전 체크
-		int cnt = 0;
-		try {
-			con = Maria.getConnection();
-			pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-			if(rs.next()){ cnt = cnt + 1;	} else { cnt = 0;	}
-		} catch(ClassNotFoundException e){
-			System.out.println("드라이버 로딩 실패");
-		} catch(Exception e){
-			System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
-		} finally {
-			Maria.close(rs, pstmt, con);
-		}
-		return cnt;
-	}
 	
-	//회원 가입
+		public int idCheckPro(String id){	//중복 아이디 체크 / 회원가입시 가입전 체크
+			int cnt = 0;
+			try {
+				con = Maria.getConnection();
+				pstmt = con.prepareStatement(Maria.USER_ID_CHECK);
+				pstmt.setString(1, id);
+				rs = pstmt.executeQuery();
+				if(rs.next()){ cnt = cnt + 1;	} else { cnt = 0;	}
+			} catch(ClassNotFoundException e){
+				System.out.println("드라이버 로딩 실패");
+			} catch(Exception e){
+				System.out.println("SQL 구문이 처리되지 못했거나 연산이 잘못되었습니다.");
+			} finally {
+				Maria.close(rs, pstmt, con);
+			}
+			return cnt;
+		}
+	
+		//회원 가입
 		public int addUser(UserDTO user){
 			int cnt = 0;
 			try {
@@ -48,7 +47,7 @@ public class UserDAO {
 				pstmt.setString(4, user.getBirth());
 				pstmt.setString(5, user.getEmail());
 				pstmt.setString(6, user.getTel());
-				pstmt.setString(7, user.getAddr());
+				pstmt.setString(7, user.getAddress());
 				cnt = pstmt.executeUpdate();
 			} catch(ClassNotFoundException e){
 				System.out.println("드라이버 로딩 실패");
@@ -121,9 +120,9 @@ public class UserDAO {
 					dto.setEmail(rs.getString("email"));
 					dto.setTel(rs.getString("tel"));
 					dto.setGrade(rs.getString("grade"));
-					dto.setAddr(rs.getString("addr"));
+					dto.setAddress(rs.getString("address"));
 					dto.setPoint(rs.getInt("point"));
-					dto.setVisted(rs.getInt("visted"));
+					dto.setVisited(rs.getInt("visited"));
 					dto.setBirth(rs.getString("birth"));
 					dto.setRegdate(rs.getString("regdate"));
 				}
@@ -154,7 +153,7 @@ public class UserDAO {
 				pstmt.setString(3, user.getBirth());
 				pstmt.setString(4, user.getEmail());
 				pstmt.setString(5, user.getTel());
-				pstmt.setString(6, user.getAddr());
+				pstmt.setString(6, user.getAddress());
 				pstmt.setString(7, user.getId());
 				cnt = pstmt.executeUpdate();
 			} catch(ClassNotFoundException e){
@@ -188,9 +187,9 @@ public class UserDAO {
 					dto.setEmail(rs.getString("email"));
 					dto.setTel(rs.getString("tel"));
 					dto.setGrade(rs.getString("grade"));
-					dto.setAddr(rs.getString("addr"));
+					dto.setAddress(rs.getString("address"));
 					dto.setPoint(rs.getInt("point"));
-					dto.setVisted(rs.getInt("visted"));
+					dto.setVisited(rs.getInt("visited"));
 					dto.setBirth(rs.getString("birth"));
 					dto.setRegdate(rs.getString("regdate"));
 					System.out.println(dto.getId());

@@ -22,7 +22,7 @@ public class AddUserCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		//id, pw, name, birth, email, tel, addr
+		//id, pw, name, birth, email, tel, address
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
@@ -57,7 +57,7 @@ public class AddUserCtrl extends HttpServlet {
 			user.setId(id);
 			user.setPw(encrypted);
 			user.setName(name);
-			user.setAddr(addr1 + "<br>" +addr2);
+			user.setAddress(addr1 + "<br>" +addr2);
 			user.setTel(tel);
 			user.setEmail(email);
 			user.setBirth(birth);

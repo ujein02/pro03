@@ -22,16 +22,16 @@ public class UserUpdateCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-		//id, pw, name, birth, email, tel, addr
+		//id, pw, name, birth, email, tel, address
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
 		String addr1 = request.getParameter("address1");
 		String addr2 = request.getParameter("address2");
-		String addr = request.getParameter("addr");
+		String address = request.getParameter("address");
 		if(addr1!=null){
-			addr = addr1 + "<br>" + addr2;
+			address = addr1 + "<br>" + addr2;
 		}
 		String email = request.getParameter("email");
 		String tel = request.getParameter("tel");
@@ -53,7 +53,7 @@ public class UserUpdateCtrl extends HttpServlet {
 		user.setId(id);
 		user.setPw(encrypted);
 		user.setName(name);
-		user.setAddr(addr);
+		user.setAddress(address);
 		user.setTel(tel);
 		user.setEmail(email);
 		user.setBirth(birth);

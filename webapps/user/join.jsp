@@ -157,7 +157,7 @@
 	</script>
 	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </div>
-</section>
+
 <%@ include file="../footer.jsp" %>
 </body>
 </html>
