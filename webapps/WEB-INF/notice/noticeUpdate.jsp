@@ -13,9 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 수정하기</title>
     <jsp:include page="/head.jsp" />
-<style>
-.buttons {margin-top:10px; float:right;}
-</style>    
+   
   </head>
   <body>
   <jsp:include page="/header.jsp" />

@@ -13,10 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 목록</title>
     <jsp:include page="/head.jsp" />
-<style>
-
-.buttons{float:right;}
-</style>      
+     
   </head>
   <body>
   <jsp:include page="/header.jsp" />
@@ -28,7 +25,7 @@
 		    <tr>
 		      <th><abbr title="No">No</abbr></th>
 		      <th><abbr title="Title">Title</abbr></th>
-		      <th><abbr title="Result">RegDate</abbr></th>
+		      <th><abbr title="RegDate">RegDate</abbr></th>
 		    </tr>
 		  </thead>
 		   <tbody>
@@ -49,7 +46,7 @@
 		  </tbody>
 		</table>
 		<div class="buttons">
-		  <a href="${path1 }/notice/addNotice.jsp" class="button is-link">글 등록</a>
+		  <a href="${path1 }/notice/addNotice.jsp" class="button is-info">글 등록</a>
 		</div>
     </div>
   </section>

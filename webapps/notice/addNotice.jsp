@@ -13,9 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 글 등록</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-<style>
-.buttons{float:right;}
-</style>    
+  
   </head>
   <body>
   <jsp:include page="../header.jsp" />

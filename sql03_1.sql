@@ -54,3 +54,34 @@ delete from user where id="admin";
 
 alter table user rename column visted to visited;
 alter table user rename column addr to address;
+
+CREATE TABLE pic(
+	no INT PRIMARY KEY AUTO_INCREMENT,
+	tourno VARCHAR(20),
+	picname VARCHAR(150),
+	pos INT DEFAULT 1
+);
+
+SELECT * FROM pic;
+
+DESC pic;
+
+
+CREATE TABLE tour(
+	no INT PRIMARY KEY AUTO_INCREMENT,
+	tourno VARCHAR(20),	-- 카테고리 타입 - 마지막 레코드의 no+1
+	cate VARCHAR(20),
+	place VARCHAR(100),
+	comment1 VARCHAR(1000),
+	comment2 VARCHAR(1000)  
+);
+
+DESC tour;
+
+SELECT * FROM tour;
+
+
+COMMIT;
+
+select * from tour where NO=3;
+

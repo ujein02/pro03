@@ -78,9 +78,9 @@
 				</tr>
 			</tbody>
 		</table>
-		<div class="btn-group">
-			<input type="submit" name="submit-btn" class="button button-info" value="회원가입">
-			<input type="reset" name="reset-btn" class="button button-info" value="취소">
+		<div class="buttons">
+			<input type="submit" name="submit-btn" class="button is-info" value="회원가입">
+			<input type="reset" name="reset-btn" class="button is-danger" value="취소">
 			
 		</div>
 	</form>	
