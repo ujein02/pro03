@@ -38,7 +38,7 @@
 					</div>
 					<div class="field">
 					  <label class="label">장소이름</label>
-					  <div class="control has-icons-left has-icons-right">
+					  <div class="control(1) has-icons-left has-icons-right">
 					    <textarea class="textarea" name="place" id="place" cols="80" rows="1" maxlength="500" required></textarea>
 					    <span class="icon is-small is-left">
 					      <i class="fas fa-user"></i>
@@ -51,35 +51,41 @@
 					</div>
 					<div class="field">
 					  <label class="label">장소 위치설명</label>
-					  <div class="control has-icons-left has-icons-right">
+					  <div class="control(1) has-icons-left has-icons-right">
 					    <textarea class="textarea" name="comment1" id="comment1" cols="80" rows="8" maxlength="500" required></textarea>
 					  </div>
-					  <p class="help is-success">장소의 주요설명을 넣어 주시기 바랍니다.</p>
+					  <p class="help is-success">장소의 위치설명을 넣어 주시기 바랍니다.</p>
 					</div>
 
 					<div class="field">
 					  <label class="label">장소 상세설명</label>
-					  <div class="control has-icons-left has-icons-right">
+					  <div class="control(1) has-icons-left has-icons-right">
 					    <textarea class="textarea" name="comment2" id="comment2" cols="80" rows="8" maxlength="500" required></textarea>
 					  </div>
 					  <p class="help is-success">장소의 상세설명을 넣어 주시기 바랍니다.</p>
 					</div>
+					
+					<div class="field">
+					  	<label class="label">주소</label>
+					    <input type="text" name="address1" id="address1" class="input" style="margin-bottom:10px;" placeholder="기본 주소" required>
+					    <input type="text" name="address2" id="address2" class="input" style="margin-bottom:10px;" placeholder="상세 주소" required>
+					    <input type="text" name="postcode" id="postcode" class="input" style="margin-bottom:10px;" placeholder="우편 번호" required>
+					    <button id="post_btn" onclick="findAddr()" class="button is-info">우편번호 검색</button>
+					</div>		
 
 					<div class="field">
-					  <label class="label">이미지 추가</label>
-					  <div class="control">
-						<input type="hidden" name="pic_ck1" id="pic_ck1" value="no"/>
-						<button type="button" class="button is-link" onclick="imgUpload(1)">이미지 추가</button>
-					  </div>
+						<label class="label">이미지 추가</label>
+						  <div class="control(1)">
+							<input type="hidden" name="pic_ck1" id="pic_ck1" value="no"/>
+							<button type="button" class="button is-link" onclick="imgUpload(1)">이미지 추가</button>
+						  </div>
 					</div>
 									
-					<div class="field is-grouped">
-					  <div class="control">
+					<div class="buttons">
+					  
 					    <button type="submit" class="button is-link">장소 등록</button>
-					  </div>
-					  <div class="control">
-					    <button type="reset" class="button is-link is-light">취소</button>
-					  </div>
+					  	<button type="reset" class="button is-link is-light">취소</button>
+					 
 					</div>
 				</form>
 				<script>
@@ -117,6 +123,26 @@
 					}
 				}
 				</script>
+				<script>
+				function findAddr() {
+					new daum.Postcode({
+						oncomplete: function(data) {
+							console.log(data);
+							var roadAddr = data.roadAddress;
+							var jibunAddr = data.jibunAddress;
+							document.getElementById("postcode").value = data.zonecode;
+							if(roadAddr !== '') {
+								document.getElementById("address1").value = roadAddr;				
+							} else if(jibunAddr !== ''){
+								document.getElementById("address1").value = jibunAddr;
+							}
+							document.getElementById("address2").focus();
+							return;
+						}
+					}).open();
+				}
+				</script>
+				<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 			</div>
 		</div>
   </section>

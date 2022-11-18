@@ -85,3 +85,42 @@ COMMIT;
 
 select * from tour where NO=3;
 
+ALTER TABLE tour ADD COLUMN addr VARCHAR(200);
+
+update tour set addr="경상북도 포항시 북구 선착로 78" WHERE tourno="B0005";
+
+select * from tour where tourno="B0005";
+
+-- 이용후기 테이블
+CREATE TABLE impress(
+	NO INT PRIMARY KEY AUTO_INCREMENT,
+	cate VARCHAR(20),
+	tourno VARCHAR(20),
+	id VARCHAR(30),
+	content VARCHAR(1000),
+	star DOUBLE,
+	imgSrc VARCHAR(150),
+	regdate DATETIME DEFAULT NOW()
+);
+
+DESC impress;
+
+
+-- 질의응답 테이블
+CREATE TABLE qna(
+	NO INT PRIMARY KEY AUTO_INCREMENT,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(1000) NOT NULL,
+	author VARCHAR(20) NOT NULL,
+	regdate DATETIME DEFAULT NOW(),
+	lev INT DEFAULT 0,					-- 깊이
+	parno INT,								-- 부모글 번호
+	sec CHAR(1),								-- 비밀글 여부
+	visited INT DEFAULT 0
+);
+
+DESC qna;
+
+COMMIT;
+
+select * from qna order by parno asc, lev asc,no ASC;

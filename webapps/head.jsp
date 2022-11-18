@@ -5,19 +5,21 @@
 <%@ page import="java.util.*, java.lang.*" %>
 <%@ page import="java.text.*, java.net.InetAddress" %>
 <c:set var="path0" value="<%=request.getContextPath() %>" />
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./font.css">
 <style>
 .table { min-width:960px; }
-body, html { font-family: 'GmarketSansMedium', sans-serif; }
-#logo { display:block; width:92px; height:45px; background-image:url("${path0 }/data/logo.png");
+body, html, web guide { font-family: 'GmarketSansMedium', sans-serif; }
+#logo { display:block; width:92px; height:45px; background-image:url("${path0 }/data/logo.png"); background-color:white;
 background-size:90% auto; background-repeat:no-repeat; background-position:center center; }
 #nav-group { border-bottom:3px solid #ddd; }
 #gnb .navbar-link::after { content:""; display:none; }
 #sidebar .navbar { display:block; width:100%; background-color:transparent; }
 #sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
 #frm1 .inline { width:70%; float:left; margin-right:2%; }
+#frm1.search_form .inline { display:inline-block; width:auto; } 
 .navbar-item.has-dropdown.is-hoverable { min-width:110px; position:static; }
 .navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
 .navbar-item.has-dropdown.is-hoverable.single { position:relative;  }
@@ -30,6 +32,7 @@ font-weight:500; }
 font-weight:500; }
 p.title { font-size:1.4rem; }
 p.subtitle { font-size:1.1rem; }
+p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; max-height:40px; }
 .item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
   -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }
 .breadcrumb ul li:last-child { padding-right:1.5rem; }

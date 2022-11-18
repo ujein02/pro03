@@ -3,10 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path1" value="<%=request.getContextPath() %>" />
 <c:set var="path2" value="${pageContext.request.contextPath }" /> 
-<style>
-#logo { display:block; width:200px; height:auto; padding-top:20px; }
-
-</style> 
 <div id="nav-group">
 	<div class="container"> 
 		<nav class="navbar is-light" role="navigation" aria-label="main navigation">
@@ -64,12 +60,19 @@
 							</div>	
 							<div class="navbar-item has-dropdown is-hoverable single">
 						    	<a class="navbar-link">
-							      	공지사항
+							      	커뮤니티
 							    </a>
 								<div class="navbar-dropdown single">
 								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetNoticeListCtrl.do">
 								       	공지사항
 								     </a>
+								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetQnaListCtrl.do">
+								       	묻고 답하기
+								     </a>
+								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">
+								       	이용후기
+								     </a>
+								     
 							    </div> 
 							</div>
 							<div class="navbar-item has-dropdown is-hoverable single">

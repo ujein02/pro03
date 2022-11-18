@@ -29,6 +29,16 @@ public class ModifyProTourCtrl extends HttpServlet {
 		String comment1 = request.getParameter("comment1");
 		String comment2 = request.getParameter("comment2");
 		
+		String address1 = request.getParameter("address1");
+		String address2 = request.getParameter("address2");
+		String addr = "";
+		
+		if(address1!=""){
+			addr = address1 + address2;
+		} else {
+			addr = request.getParameter("addr");
+		}
+		
 		TourDTO dto = new TourDTO();
 		dto.setNo(no);
 		dto.setCate(cate);
@@ -36,6 +46,7 @@ public class ModifyProTourCtrl extends HttpServlet {
 		dto.setPlace(place);
 		dto.setComment1(comment1);
 		dto.setComment2(comment2);
+		dto.setAddr(addr);
 		
 		TourDAO dao = new TourDAO();
 		int cnt = dao.modifyTour(dto);
@@ -43,7 +54,7 @@ public class ModifyProTourCtrl extends HttpServlet {
 		if(cnt>=1){
 			response.sendRedirect("GetTourListCtrl.do");
 		} else {
-			response.sendRedirect("ModifyProTourCtrl.do?no="+no);
+			response.sendRedirect("ModifyTourCtal.do?no="+no);
 		}
 	}
 }
