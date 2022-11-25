@@ -14,6 +14,7 @@ public class ImpressDAO {
 	private Connection con = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	String sql = "";
 	
 	public ArrayList<ImpressDTO> getImpressList() {
 		ArrayList<ImpressDTO> impList = new ArrayList<ImpressDTO>();
@@ -29,7 +30,7 @@ public class ImpressDAO {
 				dto.setId(rs.getString("id"));
 				dto.setContent(rs.getString("content"));
 				dto.setStar(rs.getDouble("star"));
-				dto.setImgSrc(rs.getString("imgSrc"));
+				dto.setImgSrc(rs.getString("imgsrc"));
 				dto.setRegdate(rs.getString("regdate"));
 				impList.add(dto);
 			}
@@ -46,6 +47,7 @@ public class ImpressDAO {
 		}
 		return impList;
 	}
+	
 	public ImpressDTO getImpress(int no){
 		ImpressDTO dto = new ImpressDTO();
 		try {
@@ -61,7 +63,7 @@ public class ImpressDAO {
 				dto.setId(rs.getString("id"));
 				dto.setContent(rs.getString("content"));
 				dto.setStar(rs.getDouble("star"));
-				dto.setImgSrc(rs.getString("imgSrc"));
+				dto.setImgSrc(rs.getString("imgsrc"));
 				dto.setRegdate(rs.getString("regdate"));
 			}
 
@@ -78,18 +80,39 @@ public class ImpressDAO {
 		}
 		return dto;
 	}
-	public int addImpress(ImpressDTO dto){
-		int cnt = 0;
+	
+	public void addImpress(ImpressDTO dto){
 		try {
 			con = Maria.getConnection();
-			//글 추가	cate, tourno, id, content, star, imgSrc
-			pstmt = con.prepareStatement(Maria.IMPRESS_ADD);
+			//글 추가
+			pstmt = con.prepareStatement(Maria.IMPRESS_INSERT);
 			pstmt.setString(1, dto.getCate());
 			pstmt.setString(2, dto.getTourno());
 			pstmt.setString(3, dto.getId());
 			pstmt.setString(4, dto.getContent());
 			pstmt.setDouble(5, dto.getStar());
 			pstmt.setString(6, dto.getImgSrc());
+			pstmt.executeUpdate();
+		} catch(ClassNotFoundException e){
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();
+		} catch(SQLException e){
+			System.out.println("SQL 구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");
+		} finally {
+			Maria.close(pstmt, con);
+		}
+	}
+
+	public int delImpress(int no) {
+		int cnt = 0;
+		try {
+			con = Maria.getConnection();
+			//글 삭제
+			pstmt = con.prepareStatement(Maria.IMPRESS_DELETE);
+			pstmt.setInt(1, no);
 			cnt = pstmt.executeUpdate();
 		} catch(ClassNotFoundException e){
 			System.out.println("드라이버 로딩 실패");
@@ -105,4 +128,29 @@ public class ImpressDAO {
 		return cnt;
 	}
 
+	public int modifyImpress(ImpressDTO dto) {
+		int cnt = 0;
+		try {
+			con = Maria.getConnection();
+			//글 추가
+			pstmt = con.prepareStatement(Maria.IMPRESS_UPDATE);
+			
+			pstmt.setString(1, dto.getContent());
+			pstmt.setDouble(2, dto.getStar());
+			pstmt.setString(3, dto.getId());		
+			pstmt.setInt(4, dto.getNo());
+			cnt = pstmt.executeUpdate();
+		} catch(ClassNotFoundException e){
+			System.out.println("드라이버 로딩 실패");
+			e.printStackTrace();
+		} catch(SQLException e){
+			System.out.println("SQL 구문이 처리되지 못했습니다.");
+			e.printStackTrace();
+		} catch(Exception e){
+			System.out.println("잘못된 연산 및 요청으로 인해 목록을 불러오지 못했습니다.");
+		} finally {
+			Maria.close(pstmt, con);
+		}
+		return cnt;
+	}
 }

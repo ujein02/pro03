@@ -71,25 +71,10 @@
 								     </a>
 								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">
 								       	이용후기
-								     </a>
-								     
+								     </a>	
 							    </div> 
 							</div>
-							<div class="navbar-item has-dropdown is-hoverable single">
-							    <a class="navbar-link">
-							      	ABOUT 포항
-							    </a>
 							
-							    <div class="navbar-dropdown single">
-							      <a class="navbar-item">
-							        1
-							      </a>
-							      <hr class="navbar-divider">
-							      <a class="navbar-item">
-							        2
-							      </a>
-							    </div>
-						  </div>
 						</div>
 						
 						<div class="navbar-end" id="tnb">

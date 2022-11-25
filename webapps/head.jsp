@@ -19,13 +19,14 @@ background-size:90% auto; background-repeat:no-repeat; background-position:cente
 #sidebar .navbar { display:block; width:100%; background-color:transparent; }
 #sidebar .navbar-item { float:none; clear:both; display:block; width:100%; }
 #frm1 .inline { width:70%; float:left; margin-right:2%; }
+#frm1.search_form { border-top:2px solid #ddd; border-bottom:2px solid #ddd; height:60px; padding-top:10px; padding-bottom:10px;  }
 #frm1.search_form .inline { display:inline-block; width:auto; } 
 .navbar-item.has-dropdown.is-hoverable { min-width:110px; position:static; }
-.navbar-item.has-dropdown.is-hoverable a { font-weight:800; }
+.navbar-item.has-dropdown.is-hoverable a { font-weight:800; padding-left:20px; }
 .navbar-item.has-dropdown.is-hoverable.single { position:relative;  }
 #nav .navbar-dropdown.cate { min-width:940px; width:940px; position:absolute; left:50px; }
 #nav .navbar-dropdown.single { min-width:150px; width:150px; left:auto; top:68px; }
-#nav .navbar-dropdown.cate a { display:inline-block; padding:8px; margin-right:20px;  
+#nav .navbar-dropdown.cate a { display:inline-block; padding:8px; margin-right:30px;  
 width:120px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
 font-weight:500; }
 #nav .navbar-dropdown.single a { display:inline-block; width:150px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap; 
@@ -38,5 +39,6 @@ p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-spa
 .breadcrumb ul li:last-child { padding-right:1.5rem; }
 .control, .buttons{float:right; margin-right:100px;}
 #con1{margin-top:60px;}
+.vs{margin-top:50px;}
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>

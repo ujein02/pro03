@@ -3,9 +3,8 @@
 <footer class="footer">
   <div class="content has-text-centered">
     <p>
-      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+     	경상북도 포항시 남구 시청로 1 (대잠동, 포항시청) | 대표전화 : 054-270-8282 | 관광안내전화 : 1330 <br>
+     	 ⓒ POHANG CITY. All Rights Reserved.
     </p>
   </div>
 </footer>

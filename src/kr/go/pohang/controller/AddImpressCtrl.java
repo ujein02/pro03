@@ -7,9 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kr.go.pohang.dto.ImpressDTO;
+import kr.go.pohang.dto.PicDTO;
+import kr.go.pohang.dto.TourDTO;
 import kr.go.pohang.model.ImpressDAO;
+import kr.go.pohang.model.TourDAO;
 
 
 @WebServlet("/AddImpressCtrl.do")
@@ -20,28 +24,33 @@ public class AddImpressCtrl extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
-			//cate, tourno, id, content, star, imgSrc
+		
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("sid");
+		
 		String cate = request.getParameter("cate");
 		String tourno = request.getParameter("tourno");
-		String id = request.getParameter("id");
 		String content = request.getParameter("content");
-		//double star = Double.parseDouble(request.getParameter("star"));
-		String imgSrc = request.getParameter("imgSrc");
-				
+		Double star = Double.parseDouble(request.getParameter("star"));
+		
+		TourDAO picture = new TourDAO();
+		PicDTO pic = picture.getPic(tourno);
+		TourDTO tour = picture.getPlace(tourno); 
+		
+		String imgSrc = pic.getPicname();
+		
 		ImpressDTO dto = new ImpressDTO();
 		dto.setCate(cate);
 		dto.setTourno(tourno);
 		dto.setId(id);
 		dto.setContent(content);
+		dto.setStar(star);
 		dto.setImgSrc(imgSrc);
 		
 		ImpressDAO dao = new ImpressDAO();
-		int cnt = dao.addImpress(dto);
+		dto.setPlace(tour.getPlace());
+		dao.addImpress(dto);
 		
-		if(cnt>=1){
-			response.sendRedirect("GetImpressListCtrl.do");
-		} else {
-			response.sendRedirect("./impress/addImpress.jsp");
-		}
+		response.sendRedirect("GetImpressListCtrl.do");
 	}
 }
