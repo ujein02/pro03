@@ -49,9 +49,9 @@
 			</tbody>
 		</table>
 		<div class="buttons">
-			<input type="submit" name="submit-btn" class="button button-info" value="로그인">
-			<input type="reset" name="reset-btn" class="button button-info" value="취소">
-			<a href="<%=request.getContextPath() %>/user/agree.jsp" class="button button-danger">회원가입</a>
+			<input type="submit" name="submit-btn" class="button is-info" value="로그인">
+			<input type="reset" name="reset-btn" class="button is-danger" value="취소">
+			<a href="<%=request.getContextPath() %>/user/agree.jsp" class="button is-info">회원가입</a>
 		</div>
 	</form>	
 	<script>

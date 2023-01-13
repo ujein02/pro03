@@ -37,8 +37,30 @@ p.comment2 { max-width:400px; text-overflow:ellipsis; overflow:hidden; white-spa
 .item_com {   overflow: hidden;  text-overflow: ellipsis;  display: -webkit-box;
   -webkit-line-clamp: 3;  -webkit-box-orient: vertical; font-size:0.9rem; }
 .breadcrumb ul li:last-child { padding-right:1.5rem; }
-.control, .buttons{float:right; margin-right:100px;}
+.control, .buttons .btn-group{float:right; margin-right:100px;}
 #con1{margin-top:60px;}
 .vs{margin-top:50px;}
+.hidden_item { display:none; }
+.star_data { height:36px; position:relative; background-image:url("${path0 }/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group { width:100px; height:36px; position:relative; }
+#star_group #stardate { width:100px; height:36px; background-image:url("${path0 }/data/star1.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star_group #starrate { width:100px; height:36px; background-image:url("${path0 }/data/star.png"); 
+background-repeat:no-repeat; background-position:left center; background-size:100px auto; }
+#star10:checked ~ #star_group #starrate { width:100px; }
+#star9:checked ~ #star_group #starrate { width:90px; }
+#star8:checked ~ #star_group #starrate { width:80px; }
+#star7:checked ~ #star_group #starrate { width:70px; }
+#star6:checked ~ #star_group #starrate { width:60px; }
+#star5:checked ~ #star_group #starrate { width:50px; }
+#star4:checked ~ #star_group #starrate { width:40px; }
+#star3:checked ~ #star_group #starrate { width:30px; }
+#star2:checked ~ #star_group #starrate { width:20px; }
+#star1:checked ~ #star_group #starrate { width:10px; }
+#star_btn { width:100px; height:36px; position:absolute; z-index:20; top:0; left:0;  }
+#star_btn label { display:block; width:10px; height:36px; position:relative; float:left; }
+.footer{margin-top: 200px;}
+.has-background-primary-dark{background-color: #27b1bf94!important;color:#fff;}
 </style>
 <script src="https://code.jquery.com/jquery-latest.js"></script>

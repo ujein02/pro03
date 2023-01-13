@@ -69,9 +69,9 @@
 								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetQnaListCtrl.do">
 								       	묻고 답하기
 								     </a>
-								     <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">
+								     <!--  <a class="navbar-item" href="<%=request.getContextPath() %>/GetImpressListCtrl.do">
 								       	이용후기
-								     </a>	
+								     </a>-->	
 							    </div> 
 							</div>
 							

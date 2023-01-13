@@ -12,6 +12,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>공지사항 글 등록</title>
+    <jsp:include page="/head.jsp" />
+    <link rel="stylesheet" href="${path1 }/resource/datatables.min.css">
+	<script src="${path1 }/resource/datatables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   
   </head>

@@ -12,7 +12,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>답변 하기</title>
+    <title>질문 및 답변 수정</title>
     <jsp:include page="/head.jsp" />
 	<link rel="stylesheet" href="${path1 }/resource/datatables.min.css">
 	<script src="${path1 }/resource/datatables.min.js"></script>
@@ -21,7 +21,7 @@
   <jsp:include page="/header.jsp" />
   <section class="section">
     	<div class="container">
-			<h2 class="title">질문 및 답변 상세 내용</h2>
+			<h2 class="title">질문 및 답변 수정</h2>
 			<form name="frm1" id="frm1" action="${path1 }/UpdateQnaProCtrl.do" method="post">
 				<input type="hidden" name="no" id="no" value="${vo.no }"/>
 				<table class="table">

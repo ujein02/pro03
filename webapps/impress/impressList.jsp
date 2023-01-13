@@ -85,14 +85,11 @@
 						  <select name="cate" id="cate" class="select" onchange="changeTourNo()" style="width:150" required>
 						  	<option value="">선택</option>
 						    <option value="A">관광</option>
-						    <option value="B">체험</option>
-						    <option value="C">행사</option>
-						    <option value="D">축제</option>
-						    <option value="E">숙박</option>
-						    <option value="F">음식</option>
-						    <option value="G">쇼핑</option>
-						    <option value="H">기타</option>
-						  </select>
+						    <option value="B">행사</option>
+						    <option value="C">음식</option>
+						    <option value="D">추천여행지</option>
+						    <option value="E">기타</option>
+						   </select>
 						</div>
 						<br>
 						<div class="select" style="width:150">

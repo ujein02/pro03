@@ -16,6 +16,9 @@
     <jsp:include page="/head.jsp" />
 	<link rel="stylesheet" href="${path1 }/resource/datatables.min.css">
 	<script src="${path1 }/resource/datatables.min.js"></script>
+	<style>
+	.btn-group{float:right; margin-right:100px;}
+	</style>
   </head>
   <body>
   <jsp:include page="/header.jsp" />
@@ -90,10 +93,11 @@
 				<a href='UpdateQnaCtrl.do?no=${vo.no }' class="button is-info">글 수정</a>
 				<a href='DeleteQnaCtrl.do?parno=${vo.no }' class="button is-danger">글 삭제</a>
 			</c:if>		
+			
+			</div>
 			<c:if test="${sid ne vo.author}">
 				<p style="clear:both">글 작성자가 아닙니다.</p>
 			</c:if>
-			</div>
 		</div>	
 	</section>
   <jsp:include page="/footer.jsp"></jsp:include>
