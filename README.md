@@ -1,5 +1,5 @@
 # 포항시 문화관광 웹 어플리케이션
-MVC Level2 Project
+MVC Level2 Project (Front ▶ https://ujein02.github.io/web03/)
 
 ## :clipboard: 프로젝트 개요
 
@@ -15,12 +15,42 @@ MVC Level2 Project
 - 관리 툴 : GitHub
 
 
+## 메뉴구조도
+![메뉴구조도](./images/menu.png)
+
+
+
+## 프로토 타입
+![프로토 타입](./images/p2.png)
+![프로토 타입](./images/p3.png)
+![프로토 타입](./images/p4.png)
+![프로토 타입](./images/p6.png)
+![프로토 타입](./images/p7.png)
+![프로토 타입](./images/p16.png)
+![프로토 타입](./images/p17.png)
+![프로토 타입](./images/p18.png)
+![프로토 타입](./images/p19.png)
+![프로토 타입](./images/p20.png)
+
+
+## 스토리보드
+![스토리보드](./images/story1.png)
+![스토리보드](./images/story2.png)
+![스토리보드](./images/story3.png)
+![스토리보드](./images/story4.png)
+![스토리보드](./images/story5.png)
+![스토리보드](./images/story6.png)
+![스토리보드](./images/story7.png)
+![스토리보드](./images/story12.png)
+
+
 ## 클래스 설계
 ![클래스 설계](./images/class.png)
 
 
 ## DB 설계
 ![DB 설계](./images/db.png)
+
 
 ## 💻기능 구현
 ![메인페이지](./images/0.png "메인페이지 첫 번째")
